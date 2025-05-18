@@ -3,11 +3,13 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics.pairwise import cosine_similarity
+import os
 
 app = Flask(__name__)
 
 # === Load data ===
-df = pd.read_csv(r"C:\Capstone\data\modified_dataframe.csv")
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'modified_dataframe.csv'))
+
 
 # === Feature engineering ===
 categorical_features = ['jenis', 'breed', 'gender', 'usia']
